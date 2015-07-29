@@ -1,0 +1,19 @@
+PODS:
+  - AudioKit (2.1.1)
+
+DEPENDENCIES:
+  - AudioKit (from `https://github.com/AudioKit/AudioKit.git`)
+
+EXTERNAL SOURCES:
+  AudioKit:
+    :git: https://github.com/AudioKit/AudioKit.git
+
+CHECKOUT OPTIONS:
+  AudioKit:
+    :commit: cfec23dcb314be2a7feb10ef6b8c11bba513c2cb
+    :git: https://github.com/AudioKit/AudioKit.git
+
+SPEC CHECKSUMS:
+  AudioKit: 54c92607d7c0fe14035793e81afe1717324ce5fa
+
+COCOAPODS: 0.37.2
