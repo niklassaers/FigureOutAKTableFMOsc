@@ -34,20 +34,16 @@ class ViewController: UIViewController {
 
 
         if waveFormSC.selectedSegmentIndex == 0 {
-            let sine = AKTable.standardSineWave()
-            sine.scaleBy(0.7)
-            self.fmOscilator?.oscillator.waveform = sine
+            self.fmOscilator?.oscillator.waveform = AKTable.standardSineWave()
+            self.fmOscilator?.oscillator.waveform.scaleBy(0.7)
             
         } else if waveFormSC.selectedSegmentIndex == 1 {
-            let square = AKTable.standardSquareWave()
-            square.scaleBy(0.6)
-            self.fmOscilator?.oscillator.waveform = square
+            self.fmOscilator?.oscillator.waveform = AKTable.standardSquareWave()
+            self.fmOscilator?.oscillator.waveform.scaleBy(0.6)
             
         } else if waveFormSC.selectedSegmentIndex == 2 {
-            let harmonic = self.harmonicWaveform()
-            harmonic.scaleBy(0.7)
-            self.fmOscilator?.oscillator.waveform = harmonic
-            
+            self.fmOscilator?.oscillator.waveform = self.harmonicWaveform()
+            self.fmOscilator?.oscillator.waveform.scaleBy(0.1)
         }
         
         if amplitudeSC.selectedSegmentIndex == 0 {
