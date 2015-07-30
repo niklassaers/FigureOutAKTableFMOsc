@@ -31,8 +31,7 @@ class ViewController: UIViewController {
     
     @IBAction func playButtonTapped(sender: AnyObject) {
         
-        note!.stop()
-        fmOscilator!.stop()
+
 
         if waveFormSC.selectedSegmentIndex == 0 {
             let sine = AKTable.standardSineWave()
@@ -60,10 +59,7 @@ class ViewController: UIViewController {
             
         }
 
-        AKOrchestra.updateInstrument(self.fmOscilator!)
-
-        
-        fmOscilator?.start()
+        AKOrchestra.updateInstrument(self.fmOscilator!)        
         fmOscilator?.playNote(note!)
     }
 
@@ -84,5 +80,9 @@ class ViewController: UIViewController {
         return table
     }
 
+    @IBAction func stop(sender: AnyObject) {
+        note!.stop()
+        fmOscilator!.stop()
+    }
 }
 
