@@ -31,39 +31,31 @@ class ViewController: UIViewController {
     
     @IBAction func playButtonTapped(sender: AnyObject) {
         
-        note!.stop()
-        fmOscilator!.stop()
+
 
         if waveFormSC.selectedSegmentIndex == 0 {
-            let sine = AKTable.standardSineWave()
-            sine.scaleBy(0.7)
-            self.fmOscilator?.oscillator.waveform = sine
+            self.fmOscilator?.oscillator.waveform = AKTable.standardSineWave()
+            self.fmOscilator?.oscillator.waveform.scaleBy(0.7)
             
         } else if waveFormSC.selectedSegmentIndex == 1 {
-            let square = AKTable.standardSquareWave()
-            square.scaleBy(0.6)
-            self.fmOscilator?.oscillator.waveform = square
+            self.fmOscilator?.oscillator.waveform = AKTable.standardSquareWave()
+            self.fmOscilator?.oscillator.waveform.scaleBy(0.6)
             
         } else if waveFormSC.selectedSegmentIndex == 2 {
-            let harmonic = self.harmonicWaveform()
-            harmonic.scaleBy(0.7)
-            self.fmOscilator?.oscillator.waveform = harmonic
-            
+            self.fmOscilator?.oscillator.waveform = self.harmonicWaveform()
+            self.fmOscilator?.oscillator.waveform.scaleBy(0.1)
         }
         
         if amplitudeSC.selectedSegmentIndex == 0 {
             self.fmOscilator!.oscillator.amplitude = akp(0.7)
             
-        } else if amplitudeSC.selectedSegmentIndex == 0 {
-            let adsr = AKLinearADSREnvelope(attackDuration: akp(0.1), decayDuration: akp(0.1), sustainLevel: akp(0.8), releaseDuration: akp(0.2), delay: akp(0.0))
+        } else if amplitudeSC.selectedSegmentIndex == 1 {
+            let adsr = AKLinearADSREnvelope(attackDuration: akp(0.5), decayDuration: akp(0.5), sustainLevel: akp(0.8), releaseDuration: akp(0.5), delay: akp(0.0))
             self.fmOscilator!.oscillator.amplitude = adsr
             
         }
 
-        AKOrchestra.updateInstrument(self.fmOscilator!)
-
-        
-        fmOscilator?.start()
+        AKOrchestra.updateInstrument(self.fmOscilator!)        
         fmOscilator?.playNote(note!)
     }
 
@@ -84,5 +76,9 @@ class ViewController: UIViewController {
         return table
     }
 
+    @IBAction func stop(sender: AnyObject) {
+        note!.stop()
+        fmOscilator!.stop()
+    }
 }
 

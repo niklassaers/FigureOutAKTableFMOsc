@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A235d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -44,6 +44,15 @@
                                     <action selector="playButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zBx-VR-ecM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEh-kR-PnO">
+                                <rect key="frame" x="16" y="114" width="568" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4jq-rt-ftO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -51,8 +60,10 @@
                             <constraint firstItem="jyV-Pf-zRb" firstAttribute="bottom" secondItem="a9C-e3-krl" secondAttribute="top" id="1rj-LJ-wfx"/>
                             <constraint firstItem="hRL-sB-6Ua" firstAttribute="width" secondItem="IFR-ri-sq2" secondAttribute="width" id="FAl-6X-nl1"/>
                             <constraint firstItem="a9C-e3-krl" firstAttribute="bottom" secondItem="IFR-ri-sq2" secondAttribute="top" id="GDH-HT-cfX"/>
+                            <constraint firstItem="nEh-kR-PnO" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="KKf-nU-jRd"/>
                             <constraint firstItem="a9C-e3-krl" firstAttribute="leading" secondItem="IFR-ri-sq2" secondAttribute="trailing" id="LgW-Mf-7bo"/>
                             <constraint firstItem="hRL-sB-6Ua" firstAttribute="top" secondItem="IFR-ri-sq2" secondAttribute="bottom" id="PNB-PC-kkN"/>
+                            <constraint firstItem="nEh-kR-PnO" firstAttribute="top" secondItem="hRL-sB-6Ua" secondAttribute="bottom" constant="8" id="Srs-m5-a0G"/>
                             <constraint firstItem="IFR-ri-sq2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="TS3-az-wx1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IFR-ri-sq2" secondAttribute="trailing" id="TsW-9O-rFK"/>
                             <constraint firstItem="a9C-e3-krl" firstAttribute="width" secondItem="IFR-ri-sq2" secondAttribute="width" id="VSm-c7-0d2"/>
@@ -60,6 +71,7 @@
                             <constraint firstItem="a9C-e3-krl" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="W9j-ft-cVD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IFR-ri-sq2" secondAttribute="trailing" id="ZgM-lc-6QL"/>
                             <constraint firstItem="IFR-ri-sq2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="oLJ-x4-07k"/>
+                            <constraint firstItem="nEh-kR-PnO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="oaR-Md-3Y1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a9C-e3-krl" secondAttribute="trailing" id="pjC-l2-oTx"/>
                             <constraint firstItem="a9C-e3-krl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="y5l-lH-3es"/>
                         </constraints>
