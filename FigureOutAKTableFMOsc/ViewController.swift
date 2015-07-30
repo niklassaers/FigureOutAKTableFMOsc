@@ -53,8 +53,8 @@ class ViewController: UIViewController {
         if amplitudeSC.selectedSegmentIndex == 0 {
             self.fmOscilator!.oscillator.amplitude = akp(0.7)
             
-        } else if amplitudeSC.selectedSegmentIndex == 0 {
-            let adsr = AKLinearADSREnvelope(attackDuration: akp(0.1), decayDuration: akp(0.1), sustainLevel: akp(0.8), releaseDuration: akp(0.2), delay: akp(0.0))
+        } else if amplitudeSC.selectedSegmentIndex == 1 {
+            let adsr = AKLinearADSREnvelope(attackDuration: akp(0.5), decayDuration: akp(0.5), sustainLevel: akp(0.8), releaseDuration: akp(0.5), delay: akp(0.0))
             self.fmOscilator!.oscillator.amplitude = adsr
             
         }
